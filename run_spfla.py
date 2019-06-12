@@ -50,7 +50,7 @@ def home_en():
     return render_template('search.html', language="en", text=words, tokens=tokens)
 
 @app.route('/es')
-def home_es_json():
+def home_es():
     words = request.args.get('text', default=None)
     tokens = nlp_es.tokenize_text(words)
     return render_template('search.html', language="es", text=words, tokens=tokens)
@@ -62,7 +62,7 @@ def home_en_json():
     return jsonify(tokens)
 
 @app.route('/json/es')
-def home_es():
+def home_es_json():
     words = request.args.get('text', default=None)
     tokens = nlp_es.tokenize_text(words)
     return jsonify(tokens)
