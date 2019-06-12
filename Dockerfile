@@ -13,6 +13,8 @@ RUN apt-get update && \
 # Download scripts from repo
 RUN git clone https://github.com/richiemig/spfla.git spfla
 
+RUN ["chmod", "+x", "/spfla/run_spfla.py"]
+
 EXPOSE 3000
 
 CMD /spfla/run_spfla.py
